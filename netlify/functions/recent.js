@@ -1,6 +1,6 @@
-exports.handler = async function(event, context) {
-  const fetch = (await import('node-fetch')).default;
+import fetch from 'node-fetch';
 
+export async function handler(event, context) {
   const username = event.queryStringParameters.user || 'gort4';
   const apiKey = '59ffdc62f95a983d45e802d4cb7441ed';
   const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
@@ -18,4 +18,4 @@ exports.handler = async function(event, context) {
       body: JSON.stringify({ error: 'Erro ao buscar dados do Last.fm' }),
     };
   }
-};
+}
