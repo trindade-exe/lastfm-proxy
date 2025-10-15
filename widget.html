@@ -47,7 +47,7 @@
     <div class="pai"> 
       <div class="album-container">
         <img id="album-art" src="" alt="Album Art">
-        <div id="now-playing">Loading last track...</div>
+        <div id="now-playing">Carregando ultima faixa ouvida...</div>
       </div>
     </div>
 
@@ -66,11 +66,11 @@
           const image = track.image.find(img => img.size === 'medium')['#text'];
 
           document.getElementById("now-playing").innerText =
-            isPlaying ? `Playing now: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
+            isPlaying ? `Ouvindo agora: \n ${artist} – ${song}` : `Ultima musica ouvida: \n ${artist} – ${song}`;
 
           document.getElementById("album-art").src = image || '';
         } catch (error) {
-          document.getElementById("now-playing").innerText = "Error";
+          document.getElementById("now-playing").innerText = "Erro";
         }
       }
 
