@@ -32,7 +32,7 @@
           const song = track.name;
 
           document.getElementById("now-playing").innerText =
-            isPlaying ? `🎶 Tocando agora: ${artist} – ${song}` : `Última música ouvida: ${artist} – ${song}`;
+            isPlaying ? `🎶 Tocando agora: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
         } catch (error) {
           document.getElementById("now-playing").innerText = "Erro ao buscar música.";
         }
