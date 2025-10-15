@@ -12,7 +12,6 @@
         font-size: 10px;
         background: transparent;
         color: black;
-        text-align: left;
         display: flex;
         align-items: center;
       }
@@ -22,15 +21,35 @@
         height: 100vh;
         display: flex;
         align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+      }
+
+      .album-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #album-art {
+        width: 64px;
+        
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      #now-playing {
+        font-size: 12px;
       }
     </style>
   </head>
   <body>
     <div class="pai"> 
-     <div id="now-playing">Loading last track...</div>
+      <div class="album-container">
+        <img id="album-art" src="" alt="Album Art">
+        <div id="now-playing">Loading last track...</div>
+      </div>
     </div>
-    
-   
 
     <script>
       async function fetchNowPlaying() {
@@ -44,16 +63,9 @@
           const isPlaying = track['@attr']?.nowplaying;
           const artist = track.artist['#text'];
           const song = track.name;
+          const image = track.image.find(img => img.size === 'medium')['#text'];
 
           document.getElementById("now-playing").innerText =
             isPlaying ? `Playing now: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
-        } catch (error) {
-          document.getElementById("now-playing").innerText = "Error";
-        }
-      }
 
-      fetchNowPlaying();
-      setInterval(fetchNowPlaying, 10000);
-    </script>
-  </body>
-</html>
+          document.getElementById("album-art").
