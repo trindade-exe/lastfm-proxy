@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/recent.js", "use": "@vercel/node" }
+    { "src": "api/recent.js", "use": "@vercel/node" },
+    { "src": "widget.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/api/recent", "dest": "api/recent.js" }
+    { "src": "/api/recent", "dest": "api/recent.js" },
+    { "src": "/widget.html", "dest": "widget.html" }
   ]
 }
