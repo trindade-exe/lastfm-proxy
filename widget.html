@@ -68,4 +68,14 @@
           document.getElementById("now-playing").innerText =
             isPlaying ? `Playing now: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
 
-          document.getElementById("album-art").
+          document.getElementById("album-art").src = image || '';
+        } catch (error) {
+          document.getElementById("now-playing").innerText = "Error";
+        }
+      }
+
+      fetchNowPlaying();
+      setInterval(fetchNowPlaying, 2000);
+    </script>
+  </body>
+</html>
