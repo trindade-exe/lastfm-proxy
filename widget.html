@@ -17,7 +17,7 @@
     </style>
   </head>
   <body>
-    <div id="now-playing">Carregando música...</div>
+    <div id="now-playing">Loading last track...</div>
 
     <script>
       async function fetchNowPlaying() {
@@ -33,9 +33,9 @@
           const song = track.name;
 
           document.getElementById("now-playing").innerText =
-            isPlaying ? `🎶 Tocando agora: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
+            isPlaying ? `Playing now: ${artist} – ${song}` : `Last played: ${artist} – ${song}`;
         } catch (error) {
-          document.getElementById("now-playing").innerText = "Erro ao buscar música.";
+          document.getElementById("now-playing").innerText = "Error";
         }
       }
 
