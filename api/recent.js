@@ -1,3 +1,4 @@
+type: "module";
 export default async function handler(req, res) {
   const username = req.query.user || "gort4";
   const apiKey = "59ffdc62f95a983d45e802d4cb7441ed";
