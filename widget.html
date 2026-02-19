@@ -66,7 +66,7 @@
           const image = track.image.find(img => img.size === 'medium')['#text'];
 
           document.getElementById("now-playing").innerText =
-            isPlaying ? `Ouvindo agora: \n ${artist} – ${song}` : `Ultima musica ouvida: \n ${artist} – ${song}`;
+            isPlaying ? `Ouvindo agora: \n ${song} – ${artist}` : `Ultima musica ouvida: \n ${artist} – ${song}`;
 
           document.getElementById("album-art").src = image || '';
         } catch (error) {
